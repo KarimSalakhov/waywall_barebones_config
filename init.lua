@@ -204,9 +204,6 @@ end,
     [wide] = resolutions.wide,
 
     [toggle_ninbot] = function()
-    [wide] = resolutions.wide,
-
-    [toggle_ninbot] = function()
         if not is_ninb_running() then
             waywall.exec("java -Dawt.useSystemAAFontSettings=on -jar " .. nb_path)
             waywall.show_floating(true)
