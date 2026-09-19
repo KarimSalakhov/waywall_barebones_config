@@ -21,8 +21,8 @@ local remapped_kb = {
     ["O"] = "A",
     ["D"] = "K",
     ["K"] = "D",
-    ["Tab"]="Shift",
-    ["Shift"]="Y",
+    ["Tab"]="LEFTSHIFT",
+    ["LEFTSHIFT"]="Y",
 }
 
 -- ==== SENSITIVITIES ====
