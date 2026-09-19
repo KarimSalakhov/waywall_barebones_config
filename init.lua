@@ -156,7 +156,7 @@ end
 local resolutions = {
     thin = make_res(340, 1080, thin_enable, res_disable),
     tall = make_res(340, 16384, tall_enable, res_disable),
-    wide = make_res(1920, 340, wide_enable),
+    wide = make_res(1920, 340, wide_enable, res_disable),
 }
 
 
@@ -187,7 +187,11 @@ config.actions = {
         waywall.set_remaps({})
     end
 end,
-    [thin] = resolutions.thin,
+    local thin_hold = function()
+    waywall.set_resolution(340, 1080)
+    thin_enable()
+end
+    [thin] = thin_hold,
     [tall] = resolutions.tall,
     [wide] = resolutions.wide,
 
