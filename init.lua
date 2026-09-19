@@ -8,7 +8,7 @@ local thin = "*-B"
 local tall = "*-G"
 local wide = "*-Caps_Lock"
 
-local toggle_ninbot = "*-C"
+local toggle_ninbot = "*-K"
 local launch_paceman = "Shift-P"
 local fullscreen = "Shift-O"
 
@@ -21,11 +21,13 @@ local remapped_kb = {
     ["O"] = "A",
     ["D"] = "K",
     ["K"] = "D",
+    ["Tab"]="Shift",
+    ["Shift"]="Y",
 }
 
 -- ==== SENSITIVITIES ====
 local normal_sens = 1
-local tall_sens = 0.01
+local tall_sens = 0.04
 
 
 -- ==== PATHS ====
@@ -176,7 +178,15 @@ local config = {
 }
 
 config.actions = {
-    
+    ["["] = function()
+    remaps_enabled = not remaps_enabled
+
+    if remaps_enabled then
+        waywall.set_remaps(remapped_kb)
+    else
+        waywall.set_remaps({})
+    end
+end,
     [thin] = resolutions.thin,
     [tall] = resolutions.tall,
     [wide] = resolutions.wide,
@@ -189,7 +199,12 @@ config.actions = {
             helpers.toggle_floating()
         end
     end,
-
+    ["*-C"] = function()
+        if waywall.get_key("F3") then
+            waywall.show_floating(true)
+        end
+        return false
+    end,
     [launch_paceman] = function()
         if not is_pacem_running() then
             waywall.exec("java -jar " .. pacem_path .. " --nogui")
