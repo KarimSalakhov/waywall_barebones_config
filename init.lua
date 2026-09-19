@@ -27,7 +27,7 @@ local remapped_kb = {
 
 -- ==== SENSITIVITIES ====
 local normal_sens = 1
-local tall_sens = 0.04
+local tall_sens = 0.1
 
 
 -- ==== PATHS ====
@@ -187,11 +187,7 @@ config.actions = {
         waywall.set_remaps({})
     end
 end,
-    local thin_hold = function()
-    waywall.set_resolution(340, 1080)
-    thin_enable()
-end
-    [thin] = thin_hold,
+    [thin] = resolutions.thin,
     [tall] = resolutions.tall,
     [wide] = resolutions.wide,
 
@@ -218,4 +214,15 @@ end
     [fullscreen] = waywall.toggle_fullscreen,
 }
 
+waywall.listen(function(key, pressed)
+    if key == "B" then
+        if pressed then
+            waywall.set_resolution(340, 1080)
+            thin_enable()
+        else
+            waywall.set_resolution(0, 0)
+            res_disable()
+        end
+    end
+end)
 return config
