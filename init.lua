@@ -152,7 +152,7 @@ end
 
 local resolutions = {
     thin = make_res(340, 1080, thin_enable),
-    tall = make_res(340, 16384, tall_enable, res_disable),
+    tall = make_res(340, 16384, tall_enable),
     wide = make_res(1920, 340, wide_enable),
 }
 
