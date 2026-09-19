@@ -116,7 +116,7 @@ end
 
 local tall_enable = function()
     show_mirrors(false, true, false)
-    waywall.set_sensitivity(tall_sens)
+    waywall.set_sensitivity(0.08)
 end
 local wide_enable = function()
     show_mirrors(false, false, true)
