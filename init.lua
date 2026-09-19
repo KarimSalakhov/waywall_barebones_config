@@ -18,7 +18,7 @@ local remapped_kb = {
 
 -- ==== SENSITIVITIES ====
 local normal_sens = 1
-local tall_sens = 0.08
+local tall_sens = 0.008
 
 
 -- ==== PATHS ====
