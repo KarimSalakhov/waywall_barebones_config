@@ -4,11 +4,11 @@ local helpers = require("waywall.helpers")
 
 
 -- ==== KEYS ====
-local thin = "*-Alt_L"
-local tall = "*-F4"
-local wide = "*-V"
+local thin = "*-B"
+local tall = "*-G"
+local wide = "*-Caps_Lock"
 
-local toggle_ninbot = "*-apostrophe"
+local toggle_ninbot = "*-C"
 local launch_paceman = "Shift-P"
 local fullscreen = "Shift-O"
 
@@ -18,7 +18,7 @@ local remapped_kb = {
 
 -- ==== SENSITIVITIES ====
 local normal_sens = 1
-local tall_sens = 0.1
+local tall_sens = 0.08
 
 
 -- ==== PATHS ====
