@@ -139,11 +139,14 @@ end
 
 
 -- ==== RESOLUTIONS ====
-local make_res = function(width, height, enable)
+local make_res = function(width, height, enable, disable)
     return function()
         local active_width, active_height = waywall.active_res()
 
-        if active_width ~= width or active_height ~= height then
+        if active_width == width and active_height == height then
+            waywall.set_resolution(0, 0)
+            disable()
+        else
             waywall.set_resolution(width, height)
             enable()
         end
@@ -151,9 +154,9 @@ local make_res = function(width, height, enable)
 end
 
 local resolutions = {
-    thin = make_res(340, 1080, thin_enable),
-    tall = make_res(340, 16384, tall_enable),
-    wide = make_res(1920, 340, wide_enable),
+    thin = make_res(340, 1080, thin_enable, res_disable),
+    tall = make_res(340, 16384, tall_enable, res_disable),
+    wide = make_res(1920, 340, wide_enable, res_disable),
 }
 
 
