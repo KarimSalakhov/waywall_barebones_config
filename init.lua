@@ -14,15 +14,19 @@ local fullscreen = "Shift-O"
 
 local remapped_kb = {
     -- ["Q"] = "O"]
-    ["MB4"] = "F3",
-    ["F3"] = "MB4",
-    ["MB5"] = "F5",
-    ["F5"] = "MB5",
+    ["MB4"] = "F5",
+    ["F5"] = "MB4",
+    ["MB5"] = "F3",
+    ["F3"] = "MB5",
+    ["A"]=["0"],
+    ["O"]=["A"],
+    ["D"]=["K"],
+    ["K"]=["D"],
 }
 
 -- ==== SENSITIVITIES ====
 local normal_sens = 1
-local tall_sens = 0.008
+local tall_sens = 0.01
 
 
 -- ==== PATHS ====
