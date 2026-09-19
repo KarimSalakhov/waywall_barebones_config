@@ -191,6 +191,10 @@ end,
     waywall.set_resolution(340, 1080)
     thin_enable()
 end
+    local thin_hold = function()
+    waywall.set_resolution(340, 1080)
+    thin_enable()
+end
     [thin] = thin_hold,
     [tall] = resolutions.tall,
     [wide] = resolutions.wide,
