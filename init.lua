@@ -13,15 +13,14 @@ local launch_paceman = "Shift-P"
 local fullscreen = "Shift-O"
 
 local remapped_kb = {
-    -- ["Q"] = "O"]
     ["MB4"] = "F5",
     ["F5"] = "MB4",
     ["MB5"] = "F3",
     ["F3"] = "MB5",
-    ["A"]=["O"],
-    ["O"]=["A"],
-    ["D"]=["K"],
-    ["K"]=["D"],
+    ["A"] = "O",
+    ["O"] = "A",
+    ["D"] = "K",
+    ["K"] = "D",
 }
 
 -- ==== SENSITIVITIES ====
