@@ -178,7 +178,7 @@ local config = {
 }
 
 config.actions = {
-    ["["] = function()
+    ["F4"] = function()
     remaps_enabled = not remaps_enabled
 
     if remaps_enabled then
