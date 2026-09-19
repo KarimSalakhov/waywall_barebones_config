@@ -13,7 +13,11 @@ local launch_paceman = "Shift-P"
 local fullscreen = "Shift-O"
 
 local remapped_kb = {
-    -- ["Q"] = "O"
+    -- ["Q"] = "O"]
+    ["mb4"]="F3"
+    ["F3"]="mb4"
+    ["mb5"]="F5"
+    ["F5"]="mb5"
 }
 
 -- ==== SENSITIVITIES ====
@@ -116,7 +120,7 @@ end
 
 local tall_enable = function()
     show_mirrors(false, true, false)
-    waywall.set_sensitivity(0.08)
+    waywall.set_sensitivity(tall_sens)
 end
 local wide_enable = function()
     show_mirrors(false, false, true)
