@@ -187,20 +187,8 @@ config.actions = {
         waywall.set_remaps({})
     end
 end,
-    [thin] = function()
-        if waywall.get_key("MB4") then
-            return
-        end
-        resolutions.thin()
-    end,
-
-    [tall] = function()
-        if waywall.get_key("MB4") then
-            return
-        end
-        resolutions.tall()
-    end,
-
+    [thin] = resolutions.thin,
+    [tall] = resolutions.tall,
     [wide] = resolutions.wide,
 
     [toggle_ninbot] = function()
