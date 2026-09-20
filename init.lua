@@ -164,9 +164,10 @@ config.actions = {
     [wide] = resolutions.wide,
 
     [toggle_ninbot] = function()
-    if not is_ninb_running() then
+    if not ninb_started then
         waywall.exec("java -jar " .. nb_path)
         waywall.show_floating(true)
+        ninb_started = true
     else
         helpers.toggle_floating()
     end
