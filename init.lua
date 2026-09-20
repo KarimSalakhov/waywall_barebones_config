@@ -19,8 +19,8 @@ local remapped_kb = {
     ["F3"] = "MB5",
     ["A"] = "O",
     ["O"] = "A",
-    ["D"] = "K",
-    ["K"] = "D",
+    ["D"] = "P",
+    ["P"] = "D",
     ["Tab"]="LEFTSHIFT",
     ["LEFTSHIFT"]="Y",
 }
