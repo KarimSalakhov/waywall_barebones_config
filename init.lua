@@ -208,13 +208,14 @@ end,
     return false
 end,
 [toggle_ninbot] = function()
-    if not is_ninb_running() then
-        waywall.exec("java -Dawt.useSystemAAFontSettings=on -jar " .. nb_path)
-        waywall.show_floating(true)
-    else
-        waywall.show_floating(true)
-    end
-end,
+        if not is_ninb_running() then
+            waywall.exec("java -Dawt.useSystemAAFontSettings=on -jar " .. nb_path)
+            waywall.show_floating(true)
+        else
+            helpers.toggle_floating()
+        end
+    end,
+
     [launch_paceman] = function()
         if not is_pacem_running() then
             waywall.exec("java -jar " .. pacem_path .. " --nogui")
