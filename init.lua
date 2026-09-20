@@ -43,7 +43,6 @@ local overlay_path = home_path .. ".config/waywall/measuring_overlay.png"
 
 
 -- ==== HELPERS ====
-local ninb_started = false
 
 
 -- ==== MIRRORS ====
@@ -190,10 +189,13 @@ config.actions = {
     [wide] = resolutions.wide,
 
     [toggle_ninbot] = function()
-    if not ninb_started then
+    local handle = io.popen("pgrep -f '[N]injabrain-Bot-1.5.2.jar'")
+    local running = handle:read("*l")
+    handle:close()
+
+    if running == nil then
         waywall.exec("java -jar " .. nb_path)
         waywall.show_floating(true)
-        ninb_started = true
     else
         helpers.toggle_floating()
     end
