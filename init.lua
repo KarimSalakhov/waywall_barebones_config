@@ -4,25 +4,16 @@ local helpers = require("waywall.helpers")
 
 
 -- ==== KEYS ====
-local thin = "*-B"
-local tall = "*-G"
-local wide = "*-Caps_Lock"
+local thin = "*-Alt_L"
+local tall = "*-F4"
+local wide = "*-V"
 
 local toggle_ninbot = "*-K"
 local launch_paceman = "Shift-P"
 local fullscreen = "Shift-O"
 
 local remapped_kb = {
-    ["MB4"] = "F5",
-    ["F5"] = "MB4",
-    ["MB5"] = "F3",
-    ["F3"] = "MB5",
-    ["A"] = "O",
-    ["O"] = "A",
-    ["D"] = "P",
-    ["P"] = "D",
-    ["Tab"]="LEFTSHIFT",
-    ["LEFTSHIFT"]="Y",
+    -- ["Q"] = "O"
 }
 
 -- ==== SENSITIVITIES ====
@@ -33,7 +24,7 @@ local tall_sens = 0.1
 -- ==== PATHS ====
 local home_path = os.getenv("HOME") .. "/"
 local pacem_path = home_path .. "mcsr/paceman-tracker-0.7.0.jar"
-local nb_path = home_path .. ".config/waywall.bkp/waywall/resources/Ninjabrain-Bot-1.5.2.jar"
+local nb_path = home_path .. "mcsr/Ninjabrain-Bot-1.5.1.jar"
 -- local overlay_path = home_path .. "mcsr/measuring_overlay.png"
 local overlay_path = home_path .. ".config/waywall/measuring_overlay.png"
 
@@ -178,30 +169,12 @@ local config = {
 }
 
 config.actions = {
-    ["F4"] = function()
-    remaps_enabled = not remaps_enabled
-
-    if remaps_enabled then
-        waywall.set_remaps(remapped_kb)
-    else
-        waywall.set_remaps({})
-    end
-end,
-    [thin] = function()
-    if waywall.get_key("F3") then
-        return false
-    end
-    resolutions.thin()
-end,
-
-[tall] = function()
-    if waywall.get_key("F3") then
-        return false
-    end
-    resolutions.tall()
-end,
+    
+    [thin] = resolutions.thin,
+    [tall] = resolutions.tall,
     [wide] = resolutions.wide,
-[toggle_ninbot] = function()
+
+    [toggle_ninbot] = function()
         if not is_ninb_running() then
             waywall.exec("java -Dawt.useSystemAAFontSettings=on -jar " .. nb_path)
             waywall.show_floating(true)
