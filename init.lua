@@ -177,6 +177,23 @@ local config = {
     },
 }
 
+config.actions = {
+    ["F4"] = function()
+    remaps_enabled = not remaps_enabled
+
+    if remaps_enabled then
+        waywall.set_remaps(remapped_kb)
+    else
+        waywall.set_remaps({})
+    end
+end,
+    [thin] = function()
+    if waywall.get_key("F3") then
+        return false
+    end
+    resolutions.thin()
+end,
+
 [tall] = function()
     if waywall.get_key("F3") then
         return false
@@ -194,13 +211,11 @@ end,
         end
     end,
     ["*-C"] = function()
-    if waywall.get_key("F3") then
-        waywall.show_floating(true)
+        if waywall.get_key("F3") then
+            waywall.show_floating(true)
+        end
         return false
-    else
-        return false
-    end
-end,
+    end,
     [launch_paceman] = function()
         if not is_pacem_running() then
             waywall.exec("java -jar " .. pacem_path .. " --nogui")
