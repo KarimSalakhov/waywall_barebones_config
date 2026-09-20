@@ -8,7 +8,7 @@ local thin = "*-Alt_L"
 local tall = "*-F4"
 local wide = "*-V"
 
-local toggle_ninbot = "*-P"
+local toggle_ninbot = "*-K"
 local launch_paceman = "Shift-P"
 local fullscreen = "Shift-O"
 
@@ -191,5 +191,5 @@ config.actions = {
 
     [fullscreen] = waywall.toggle_fullscreen,
 }
-
+print("WAYWALL CONFIG LOADED")
 return config
