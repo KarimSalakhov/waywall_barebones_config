@@ -187,8 +187,19 @@ config.actions = {
         waywall.set_remaps({})
     end
 end,
-    [thin] = resolutions.thin,
-    [tall] = resolutions.tall,
+    [thin] = function()
+    if waywall.get_key("F3") then
+        return false
+    end
+    resolutions.thin()
+end,
+
+[tall] = function()
+    if waywall.get_key("F3") then
+        return false
+    end
+    resolutions.tall()
+end,
     [wide] = resolutions.wide,
 
     [toggle_ninbot] = function()
@@ -214,15 +225,4 @@ end,
     [fullscreen] = waywall.toggle_fullscreen,
 }
 
-waywall.listen(function(key, pressed)
-    if key == "B" then
-        if pressed then
-            waywall.set_resolution(340, 1080)
-            thin_enable()
-        else
-            waywall.set_resolution(0, 0)
-            res_disable()
-        end
-    end
-end)
 return config
