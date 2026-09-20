@@ -33,7 +33,7 @@ local tall_sens = 0.1
 -- ==== PATHS ====
 local home_path = os.getenv("HOME") .. "/"
 local pacem_path = home_path .. "mcsr/paceman-tracker-0.7.0.jar"
-local nb_path = home_path .. "mcsr/Ninjabrain-Bot-1.5.1.jar"
+local nb_path = home_path .. ".config/waywall.bkp/waywall/resources/Ninjabrain-Bot-1.5.2.jar"
 -- local overlay_path = home_path .. "mcsr/measuring_overlay.png"
 local overlay_path = home_path .. ".config/waywall/measuring_overlay.png"
 
