@@ -8,7 +8,7 @@ local thin = "*-Alt_L"
 local tall = "*-F4"
 local wide = "*-V"
 
-local toggle_ninbot = "*-K"
+local toggle_ninbot = "*-P"
 local launch_paceman = "Shift-P"
 local fullscreen = "Shift-O"
 
@@ -175,7 +175,12 @@ config.actions = {
     [wide] = resolutions.wide,
 
     [toggle_ninbot] = function()
-        waywall.exec("notify-send 'K WORKS'")
+        if not is_ninb_running() then
+            waywall.exec("java -jar " .. nb_path)
+            waywall.show_floating(true)
+        else
+            helpers.toggle_floating()
+        end
     end,
 
     [launch_paceman] = function()
