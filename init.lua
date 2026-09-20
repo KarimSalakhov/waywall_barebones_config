@@ -175,13 +175,8 @@ config.actions = {
     [wide] = resolutions.wide,
 
     [toggle_ninbot] = function()
-        if not is_ninb_running() then
-            waywall.exec("java -jar " .. nb_path)
-            waywall.show_floating(true)
-        else
-            helpers.toggle_floating()
-        end
-    end,
+    waywall.exec("notify-send 'K WORKS'")
+end,
 
     [launch_paceman] = function()
         if not is_pacem_running() then
@@ -191,5 +186,4 @@ config.actions = {
 
     [fullscreen] = waywall.toggle_fullscreen,
 }
-print("WAYWALL CONFIG LOADED")
 return config
