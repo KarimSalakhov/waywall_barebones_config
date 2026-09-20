@@ -174,7 +174,6 @@ local config = {
         background = "#00000000",
         ninb_anchor = "topright",
         ninb_opacity = 1,
-	ninb_show = true,
     },
 }
 
