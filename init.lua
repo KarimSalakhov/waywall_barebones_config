@@ -4,9 +4,9 @@ local helpers = require("waywall.helpers")
 
 
 -- ==== KEYS ====
-local thin = "*-Alt_L"
-local tall = "*-F4"
-local wide = "*-V"
+local thin = "*-B"
+local tall = "*-G"
+local wide = "*-Caps_Lock"
 
 local toggle_ninbot = "*-K"
 local launch_paceman = "Shift-P"
@@ -159,8 +159,21 @@ local config = {
 
 config.actions = {
     
-    [thin] = resolutions.thin,
-    [tall] = resolutions.tall,
+    [thin] = function()
+        if waywall.get_key("F3") then
+            return false
+        end
+
+        resolutions.thin()
+    end,
+
+    [tall] = function()
+        if waywall.get_key("F3") then
+            return false
+        end
+
+        resolutions.tall()
+    end,
     [wide] = resolutions.wide,
 
     [toggle_ninbot] = function()
