@@ -194,11 +194,13 @@ end,
         end
     end,
     ["*-C"] = function()
-        if waywall.get_key("F3") then
-            waywall.show_floating(true)
-        end
+    if waywall.get_key("F3") then
+        waywall.show_floating(true)
         return false
-    end,
+    else
+        return false
+    end
+end,
     [launch_paceman] = function()
         if not is_pacem_running() then
             waywall.exec("java -jar " .. pacem_path .. " --nogui")
