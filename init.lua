@@ -175,7 +175,8 @@ config.actions = {
     [wide] = resolutions.wide,
 
     [toggle_ninbot] = function()
-    waywall.exec("notify-send 'K WORKS'")
+    waywall.exec("java -jar " .. nb_path)
+    waywall.show_floating(true)
 end,
 
     [launch_paceman] = function()
