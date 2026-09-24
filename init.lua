@@ -7,7 +7,7 @@ local helpers = require("waywall.helpers")
 local thin = "*-B"
 local tall = "*-G"
 local wide = "*-Caps_Lock"
-
+local toggle_remaps = "*-F4"
 local toggle_ninbot = "*-K"
 local launch_paceman = "Shift-P"
 local fullscreen = "Shift-O"
@@ -171,7 +171,7 @@ local config = {
 }
 
 config.actions = {
-    ["F4"] = helpers.toggle_input,
+    
     [thin] = function()
         if waywall.get_key("F3") then
             return false
