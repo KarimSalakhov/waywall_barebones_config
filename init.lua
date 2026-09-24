@@ -170,8 +170,19 @@ local config = {
     },
 }
 
+local remaps_enabled = true
 config.actions = {
-    
+    [toggle_remaps] = function()
+        remaps_enabled = not remaps_enabled
+
+        if remaps_enabled then
+            waywall.set_remaps(remapped_kb)
+        else
+            waywall.set_remaps({})
+        end
+
+        print("Remaps: " .. (remaps_enabled and "ON" or "OFF"))
+    end,
     [thin] = function()
         if waywall.get_key("F3") then
             return false
