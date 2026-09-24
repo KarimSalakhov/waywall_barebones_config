@@ -8,7 +8,7 @@ local thin = "*-B"
 local tall = "*-G"
 local wide = "*-Caps_Lock"
 local toggle_remaps = "*-I"
-local toggle_ninbot = "*-K"
+local toggle_ninbot = "*-P"
 local launch_paceman = "Shift-P"
 local fullscreen = "Shift-O"
 
@@ -22,8 +22,8 @@ local remapped_kb = {
 ["A"] = "O",
 ["O"] = "A",
 
-["D"] = "P",
-["P"] = "D",
+["D"] = "K",
+["K"] = "D",
 
 ["Tab"] = "LEFTSHIFT",
 ["LEFTSHIFT"] = "Y",
