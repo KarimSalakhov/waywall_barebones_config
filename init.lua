@@ -153,17 +153,8 @@ local resolutions = {
 
 
 -- ==== CONFIG ====
-local remaps_enabled = true
 
 local config = {
-    ["F4"] = function()
-        remaps_enabled = not remaps_enabled
-        if remaps_enabled then
-            waywall.set_remaps(remapped_kb)
-        else
-            waywall.set_remaps({})
-        end
-    end,
     input = {
         layout = "us",
         repeat_rate = 40,
@@ -180,7 +171,7 @@ local config = {
 }
 
 config.actions = {
-    
+    ["F4"] = helpers.toggle_input,
     [thin] = function()
         if waywall.get_key("F3") then
             return false
