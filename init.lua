@@ -153,16 +153,17 @@ local resolutions = {
 
 
 -- ==== CONFIG ====
+local remaps_enabled = true
+
 local config = {
     ["F4"] = function()
-    remaps_enabled = not remaps_enabled
-
-    if remaps_enabled then
-        waywall.set_remaps(remapped_kb)
-    else
-        waywall.set_remaps({})
-    end
-end,
+        remaps_enabled = not remaps_enabled
+        if remaps_enabled then
+            waywall.set_remaps(remapped_kb)
+        else
+            waywall.set_remaps({})
+        end
+    end,
     input = {
         layout = "us",
         repeat_rate = 40,
