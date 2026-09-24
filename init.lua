@@ -30,7 +30,7 @@ local remapped_kb = {
 }
 
 -- ==== SENSITIVITIES ====
-local normal_sens = 2.42
+local normal_sens = 1.42
 local tall_sens = 0.1
 
 
